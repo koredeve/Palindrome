@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Checker</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            text-align: center;
+            width: 350px;
+        }
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            outline: none;
+        }
+        input[type="text"]:focus {
+            border-color: #fda085;
+            box-shadow: 0 0 8px rgba(253, 160, 133, 0.6);
+        }
+        button {
+            background-color: #fda085;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #f6d365;
+        }
+        #display {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Check For Palindrome</h1>
+        <input type="text" placeholder="Enter a Palindrome word" id="input" required autofocus>
+        <button onclick="check4Palindrome()">Check</button>
+        <div id="display"></div>
+    </div>
+
+    <script>
+        function check4Palindrome() {
+            var word = input.value.toLowerCase();
+            var reversedWord = word.split('').reverse().join('');
+            if ( word === '') {
+                display.innerText = "The input cannot be blank";
+            } 
+            else if (word === reversedWord && word !== "") {
+                display.innerText = "True - it's a palindrome.";
+                display.style.color = "#28a745";
+            } else {
+                display.innerText = "False - it's not a palindrome.";
+                display.style.color = "#dc3545";
+            }
+        }
+    </script>
+</body>
+</html>
